@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BugHunt</title>
+<body>
+   <h2>Welcome to the bughunt</h2>
+   <table cellspacing="15">
+          <tr>
+              <td></td>
+              #loop(testflows, "test") {
+              <td><a href="#(test.link)">#(test.name)</a></td>
+              }
+          </tr>
+          
+          #loop(testers, "testers") {
+          <tr>
+              <td>#(testers)</td>
+              #loop(testflows, "test") {
+              <td>
+                  <input type="radio" name="#(test)_#(testers)" />OK
+                  <br />
+                  <input type="radio" name="#(test)_#(testers)" />NOK
+              </td>
+              }
+          </tr>
+          }
+   </table>
+</body>
+</html>
