@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
 <head>
 <title>BugHunt</title>
+</head>
 <body>
    <h2>Welcome to the bughunt</h2>
-   <table cellspacing="15">
+   <table class="table-bordered table-striped" cellspacing="15" style="width: 100%">
           <tr>
               <td></td>
               #loop(testflows, "test") {
-              <td><a href="#(test.link)">#(test.name)</a></td>
+              <td>
+                  <b><a href="#(test.link)">#(test.name)</a></b>
+                  <br />
+                  #(test.title)
+              </td>
               }
           </tr>
           
           #loop(testers, "testers") {
           <tr>
-              <td>#(testers)</td>
+              <td>
+                  <b>#(testers.name)</b>
+                  <br />
+                  #(testers.device)
+              </td>
               #loop(testflows, "test") {
               <td>
-                  <input type="radio" name="#(test)_#(testers)" />OK
+                  <input type="radio" name="#(test.name)_#(testers.name)" /><span style="color: green">OK</span>
                   <br />
-                  <input type="radio" name="#(test)_#(testers)" />NOK
+                  <input type="radio" name="#(test.name)_#(testers.name)" /><span style="color: red">NOK</span>
               </td>
               }
           </tr>
