@@ -14,3 +14,8 @@ vapor build
 ```
 vapor run serve
 ```
+
+## Create an Xcode Project
+```
+vapor xcode
+```
